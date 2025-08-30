@@ -77,6 +77,7 @@ def extract_from_smali(file_path, target_language):
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python string_extractor.py <layout_directory> <smali_directory>")
+        print("       Directory will be recursively traversed. Input `_` to skip.")
         sys.exit(1)
 
     layout_directory = sys.argv[1]
@@ -95,13 +96,13 @@ if __name__ == "__main__":
                     data.extend(extracts)
 
         if not data:
-            print(f"No texts found matching language '{target_language}'")
+            print(f"[layout] No strings found matching language '{target_language}'")
         else:
             with open("data/layout_string.csv", "w", encoding="UTF-8") as f:
                 for text in set(data):
                     text = text.replace("\n", "\\n")
                     f.write(f"{text}|{text}\n")
-            print("Output written to data/layout_string.csv")
+            print("[layout] Output written to data/layout_string.csv")
 
     if smali_directory != "_":
         smali_str = []
@@ -112,10 +113,10 @@ if __name__ == "__main__":
                     extracts = extract_from_smali(full_path, target_language)
                     smali_str.extend(extracts)
         if not smali_str:
-            print(f"No texts found matching language '{target_language}'")
+            print(f"[smali] No strings found matching language '{target_language}'")
         else:
             with open("data/smali_string.csv", "w", encoding="UTF-8") as f:
                 for text in set(smali_str):
                     text = text.replace("\n", "\\n")
                     f.write(f"{text}|{text}\n")
-            print("Output written to data/smali_string.csv")
+            print("[smali] Output written to data/smali_string.csv")
