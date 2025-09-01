@@ -7,4 +7,4 @@ Modification for RIDIPAPER 4.
 - https://namu.wiki/w/%EB%A6%AC%EB%94%94%ED%8E%98%EC%9D%B4%ED%8D%BC%204
 
 # Credits
-- [@perillamint](https://github.com/perillamint) - https://github.com/perillamint/RP4JailbreakKit/
+- [RP4JailbreakKit](https://github.com/perillamint/RP4JailbreakKit/) - [@perillamint](https://github.com/perillamint)

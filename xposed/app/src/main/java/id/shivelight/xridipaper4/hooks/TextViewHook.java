@@ -86,7 +86,7 @@ public class TextViewHook extends XC_MethodHook {
         param.args[0] = translatedString;
     }
 
-    public void hook(XC_LoadPackage.LoadPackageParam llpparam) {
+    public void hook(XC_LoadPackage.LoadPackageParam lpparam) {
         Log.d(TAG, "Hooking TextView.setText");
         XposedHelpers.findAndHookMethod(TextView.class, "setText", CharSequence.class, TextView.BufferType.class, this);
 
@@ -96,11 +96,11 @@ public class TextViewHook extends XC_MethodHook {
 
         Log.d(TAG, "Hooking R.style.k4");
         // Spanned, before processed by Html. This allow matching strings with format tags like "변경한 <b>독서상태</b>는<br>여기서 필터링해서 볼 수 있어요!"
-        XposedHelpers.findAndHookMethod("com.google.android.material.R.style", llpparam.classLoader, "k4", String.class, this);
+        XposedHelpers.findAndHookMethod("com.google.android.material.R.style", lpparam.classLoader, "k4", String.class, this);
 
         Log.d(TAG, "Hooking i.s.b.o (Intrinsics)");
         // TODO: This is basically string concatenation method, maybe concat first before getting translation?
         //       or translate each part separately?
-        XposedHelpers.findAndHookMethod("i.s.b.o", llpparam.classLoader, "l", String.class, Object.class, this);
+        XposedHelpers.findAndHookMethod("i.s.b.o", lpparam.classLoader, "l", String.class, Object.class, this);
     }
 }
