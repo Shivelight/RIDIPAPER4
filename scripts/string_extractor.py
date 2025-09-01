@@ -98,11 +98,11 @@ if __name__ == "__main__":
         if not data:
             print(f"[layout] No strings found matching language '{target_language}'")
         else:
-            with open("data/layout_string.csv", "w", encoding="UTF-8") as f:
+            with open("data/layout_string.psv", "w", encoding="UTF-8") as f:
                 for text in set(data):
                     text = text.replace("\n", "\\n")
                     f.write(f"{text}|{text}\n")
-            print("[layout] Output written to data/layout_string.csv")
+            print("[layout] Output written to data/layout_string.psv")
 
     if smali_directory != "_":
         smali_str = []
@@ -115,8 +115,8 @@ if __name__ == "__main__":
         if not smali_str:
             print(f"[smali] No strings found matching language '{target_language}'")
         else:
-            with open("data/smali_string.csv", "w", encoding="UTF-8") as f:
+            with open("data/smali_string.psv", "w", encoding="UTF-8") as f:
                 for text in set(smali_str):
                     text = text.replace("\n", "\\n")
                     f.write(f"{text}|{text}\n")
-            print("[smali] Output written to data/smali_string.csv")
+            print("[smali] Output written to data/smali_string.psv")
