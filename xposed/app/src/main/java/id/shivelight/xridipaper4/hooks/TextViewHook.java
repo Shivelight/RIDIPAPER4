@@ -42,7 +42,7 @@ public class TextViewHook extends XC_MethodHook {
 
         File smaliFile = new File(Environment.getExternalStorageDirectory().getPath() + "/XRIDIPAPER4/smali_string.psv");
         if (smaliFile.isFile()) {
-            XposedBridge.log("Smali strings file found");
+            Log.d(TAG, "Smali strings file found");
             try (Stream<String> stream = Files.lines(smaliFile.toPath())) {
                 stream.forEach(s -> {
                     List<String> columns = PsvParser.parse(s);
@@ -75,10 +75,11 @@ public class TextViewHook extends XC_MethodHook {
         CharSequence originalText = (CharSequence) param.args[0];
 
         String stringArgs = originalText.toString();
-        if (stringArgs.isBlank()) return;
+        if (stringArgs.isBlank() || !containsKorean(stringArgs)) return;
 
         String translatedString = getTranslation(stringArgs);
         if (translatedString == null) {
+            // Prefer logging the original text for consistent formatting
             XposedBridge.log(method.getName() + " - Translation not found: " + originalText);
             return;
         }
@@ -91,16 +92,33 @@ public class TextViewHook extends XC_MethodHook {
         XposedHelpers.findAndHookMethod(TextView.class, "setText", CharSequence.class, TextView.BufferType.class, this);
 
         // -----------------------
-        // The result of methods bellow will be passed to TextView.setText. Which mean some strings will be "translated" twice.
+        // The result of methods bellow will be passed to TextView.setText
         // -----------------------
 
         Log.d(TAG, "Hooking R.style.k4");
         // Spanned, before processed by Html. This allow matching strings with format tags like "변경한 <b>독서상태</b>는<br>여기서 필터링해서 볼 수 있어요!"
         XposedHelpers.findAndHookMethod("com.google.android.material.R.style", lpparam.classLoader, "k4", String.class, this);
 
-        Log.d(TAG, "Hooking i.s.b.o (Intrinsics)");
+        Log.d(TAG, "Hooking i.s.b.o.l (Intrinsics)");
         // TODO: This is basically string concatenation method, maybe concat first before getting translation?
         //       or translate each part separately?
         XposedHelpers.findAndHookMethod("i.s.b.o", lpparam.classLoader, "l", String.class, Object.class, this);
+
+        Log.d(TAG, "Hooking com.ridi.books.viewer.main.fragment.LibraryDownloadedBooksFragment.J");
+        XposedHelpers.findAndHookMethod("com.ridi.books.viewer.main.fragment.LibraryDownloadedBooksFragment",
+                lpparam.classLoader, "J", String.class, int.class, this);
+    }
+
+    public static boolean containsKorean(String text) {
+        if (text == null || text.isEmpty()) {
+            return false;
+        }
+        for (char c : text.toCharArray()) {
+            // Check if the character is within the Hangul Syllables Unicode block.
+            if (c >= '\uAC00' && c <= '\uD7A3') {
+                return true;
+            }
+        }
+        return false;
     }
 }
