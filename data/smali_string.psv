@@ -28,7 +28,7 @@
 프론트라이트가 꺼졌습니다.|The front light has been turned off.
 책갈피|Bookmark
 파일 삭제|Delete File
-배터리 잔량 표시 (%)|Display battery percentage (%)
+배터리 잔량 표시 (%)|Display Battery Percentage (%)
 기기 잠금과 구매 목록 잠금을 해제하고 설정된 잠금 비밀번호를 초기화 합니다.|Unlocks the device lock and purchase list lock, and resets the lock password.
 기본 책장에 작품이 없습니다.|There are no books on the default bookshelf.
 자동 회전|Auto-rotate
@@ -37,7 +37,7 @@
 구매방식 필터|Purchase Method Filter
 Device ID가 일치하지 않음|Device ID does not match
 동시 이용은 페이퍼 기기 한정 <b>최대 5대</b> 입니다.<br>대체할 기기를 선택해주세요|Concurrent use is limited to a <b>maximum of 5</b> Paper devices.<br>Please select a device to replace.
-읽던 페이지 동기화|Sync reading progress
+읽던 페이지 동기화|Sync Reading Progress
 기본 책장|Default Bookshelf
 이어받기 준비 중입니다...|Preparing to resume...
 마이셀렉트에 추가되었습니다.|Added to My Select.
@@ -119,7 +119,7 @@ Device ID가 일치하지 않음|Device ID does not match
 종료|Exit
 화면을 두 손가락으로 2초 이상 터치하면 해제됩니다.|To disable, touch the screen with two fingers for more than 2 seconds.
 개의 파일이 내 서재에 추가되었습니다.|files have been added to My Library.
-등록된 이미지 선택하기|Select a registered image
+등록된 이미지 선택하기|Select custom image
 브라우저를 찾을 수 없습니다.|Browser not found.
 로그아웃에 실패했습니다.\n(|Logout failed.\n(
 이미 다운로드 목록에 있는 작품입니다.|This work is already in the download list.
@@ -150,7 +150,7 @@ Device ID가 일치하지 않음|Device ID does not match
 기본 슬립 화면|Default sleep screen
 도움말|Help
 Google Play Store에 연결할 수 없습니다.|Cannot connect to Google Play Store.
-사용자 글꼴 설정|Custom Font Settings
+사용자 글꼴 설정|Custom Font
 검색 결과|Search Results
 블루투스가 꺼졌습니다.|Bluetooth is off.
 미디어 오디오가 연결되었습니다.|Media audio connected.
@@ -159,9 +159,9 @@ Google Play Store에 연결할 수 없습니다.|Cannot connect to Google Play S
 블루투스|Bluetooth
 리디포인트 <b>%,d원</b> 보유|You have <b>%,d</b> RIDI-Points
 내 책장|My Bookshelves
-사용자 슬립 화면|User sleep screen
+사용자 슬립 화면|Custom Image
 작품을 불러오는 중입니다...|Loading work...
-원본|Original
+원본|Default
 이미지가 삭제된 것 같습니다. 확인을 누르시면 목록이 새로고침됩니다.|It seems the image has been deleted. Press OK to refresh the list.
 <b>두 손가락</b>으로<br>화면을 위아래로 쓸어서 쉽게<br>조절할 수 있습니다.|You can easily adjust by swiping the screen up and down with <b>two fingers</>.
 구매/대여한|Purchased/Rented
@@ -236,7 +236,7 @@ JsonObject 변환 실패|JsonObject conversion failed
 내 파일 추가|Add My Files
 <b>다운로드 중지된 작품</b>을<br>전체 다운로드/삭제 할 수 있어요!|You can download/delete all<br><b>paused downloads</b>!
 전체 다운로드하시겠습니까?|Download all?
-임시 데이터 파일 삭제|Delete temporary data files
+임시 데이터 파일 삭제|Delete Temporary Data Files
 로그인 후 다운로드 할 수 있습니다.|You can download after logging in.
 다운로드 취소|Cancel Download
 글꼴 파일을 추가하는 중입니다...|Adding font files...
@@ -258,7 +258,7 @@ JsonObject 변환 실패|JsonObject conversion failed
 개의 파일 중|of files
 책장에 추가 중입니다...|Adding to bookshelf...
 성별, 생년정보제공 동의(선택)|Agree to provide gender and birth year information (optional)
-프론트라이트 켜질 때 밝기|Brightness when front light turns on
+프론트라이트 켜질 때 밝기|Frontlight Brightness
 이용약관, 개인 정보 처리 방침, 개인 정보 제3자 제공 및 위탁에 동의해주세요.|Please agree to the Terms of Service, Privacy Policy, and providing/entrusting personal information to third parties.
 다른 기기에서 읽던 페이지를 찾는데 실패했습니다.|Failed to find the page you were reading on another device.
 다음권이 소유되지도, 판매중이지도 않음.|Next volume is not owned or for sale.
@@ -321,7 +321,7 @@ MB를 초과할 수 없습니다.|Cannot exceed MB.
 하기|To do
 전체|All
 듣기|Listen (TTS)
-최저 밝기|Minimum brightness
+최저 밝기|Minimum Brightness
 등록|Register
 마지막 페이지입니다. 스크롤해주세요.|This is the last page. Please scroll.
 사용|Use
@@ -415,7 +415,7 @@ DRM 버전이 지원 가능한 최대 버전보다 높음|DRM version is higher 
 퀵 버튼을 한 번 더 누르거나<br>|Press the Quick Button once more or<br>
 이미지 자동 선택을 선택하시면 슬립 화면을 볼 때마다 다른 이미지가 뜹니다.|If you select Auto-select image, a different image will appear on the sleep screen each time.
 구매 목록|Purchase List
-플립 커버로 오토 슬립 ON/OFF|Auto-sleep ON/OFF with flip cover
+플립 커버로 오토 슬립 ON/OFF|Auto-sleep ON/OFF with Flip Cover
 Wi-Fi가 꺼졌습니다.|Wi-Fi is off.
 계속|Continue
 리디캐시 충전을 종료하고 이전 화면으로 돌아갑니다.|Exit RIDI-Cash charging and return to the previous screen.
@@ -487,7 +487,7 @@ Wi-Fi가 꺼졌습니다.|Wi-Fi is off.
 랜덤 기본 슬립 화면|Random default sleep screen
 뷰 모드 기능을 통해<br><b>표지/리스트</b>로 변경할 수 있어요!|With the view mode function,<br>you can change to <b>Cover/List</b> view!
 잠금 비밀번호가 설정되었습니다.|Lock password has been set.
-페이지 새로고침|Refresh Page
+페이지 새로고침|Auto Refresh
 전체 선택|Select All
 메모|Memo
 이미|Already

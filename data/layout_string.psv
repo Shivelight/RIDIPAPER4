@@ -1,7 +1,7 @@
 서명 추가|Add signature
 성별, 생년 정보 제공|Provide gender and birth year information
 사용자 지정|Custom
-뷰어설정|Viewer Settings
+뷰어설정|Viewer
 대치|Replace
 시간 선택|Select time
 책장 동기화 중 오류가 발생했습니다.\n다시 시도해주세요.|An error occurred while syncing bookshelf.\nPlease try again.
@@ -34,7 +34,7 @@
 %1$s 사용|Use %1$s
 메모|Memo
 작품을 들을 수도 있어요!|You can also listen to the work!
-기기 설정|Device Settings
+기기 설정|Device
 삭제|Delete
 파일이 삭제되었습니다.\n[구매 목록]에서 작품을 다시 다운로드해주세요.|The file has been deleted.\nPlease re-download the work from [Purchase List].
 현재 서비스 정기 점검 중 입니다.\n일부 서비스의 이용이 제한될 수 있습니다.\n점검이 끝난 후 다시 이용해주세요.|We are currently undergoing scheduled service maintenance.\nSome services may be limited.\nPlease try again after the maintenance is complete.
@@ -87,7 +87,7 @@ DRM 문제로 작품을 볼 수 없습니다(109).\n'설정 > 고객 문의 & �
 정렬 순서|Sort Order
 일반 공개 용도|For public release
 압축 해제에 실패했습니다(100).\n남은 용량을 확인해주세요.|Decompression failed (100).\nPlease check the remaining storage.
-사용자 이미지 선택|Select user image
+사용자 이미지 선택|Select custom image
 효력 없음|Not in effect
 색 온도 조절|Color Temperature
 내 서재에서 숨기기|Hide from My Library
@@ -272,7 +272,7 @@ RIDIPAPER 4 사용 팁|RIDIPAPER 4 Usage Tips
 최신 버전:|Latest version:
 책장 동기화 진행 중입니다.|Bookshelf sync in progress.
 저장|Save
-최근 본 작품 표지|Recently Viewed Work Cover
+최근 본 작품 표지|Recently biewed book cover
 스탬프 생성|Create Stamp
 페이지를 넘겨도 확대된 본문의 위치가 고정됩니다.|The position of the zoomed-in body remains fixed even when turning pages.
 하이라이트|Highlight
@@ -345,7 +345,7 @@ EPUB, PDF, TXT, ZIP, CBZ 파일을 추가하여\n볼 수 있습니다. PC와 연
 지우기|Erase
 수정|Modify
 * 이미지가 화면 크기와 다를 경우 자동으로 확대/축소됩니다.|* If the image is different from the screen size, it will be automatically enlarged/reduced.
-편의|Convenience
+편의|Help
 다운로드 전|Before Download
 복사|Copy
 팝업으로 주석 보기|View annotation in popup
@@ -468,7 +468,7 @@ RIDIPAPER 배터리를 오래 사용할 수 있는 방법을 알아봅니다.|Le
 잠금 비밀번호를 입력해주세요.|Please enter the lock password.
 글꼴|Font
 페이지 %1$d|Page %1$d
-파일 관리|File Management
+파일 관리|File
 동기화 진행 중입니다...|Syncing...
 비밀번호를 한번 더 입력해주세요.|Please enter the password again.
 뒤로가기|Back
