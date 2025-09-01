@@ -13,7 +13,7 @@
             android:value="com.ridi.paper" />
         <meta-data
             android:name="xposeddescription"
-            android:value="RIDIPAPER 4 Xposed" />
+            android:value="Docs: github.com/Shivelight/RIDIPAPER4" />
         <meta-data
             android:name="xposedminversion"
             android:value="82" />

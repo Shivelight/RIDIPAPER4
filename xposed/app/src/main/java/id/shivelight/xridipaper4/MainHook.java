@@ -2,6 +2,7 @@ package id.shivelight.xridipaper4;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import id.shivelight.xridipaper4.hooks.FileBrowserHook;
 import id.shivelight.xridipaper4.hooks.TextViewHook;
 
 public class MainHook implements IXposedHookLoadPackage {
@@ -12,6 +13,9 @@ public class MainHook implements IXposedHookLoadPackage {
 
         TextViewHook textViewHook = new TextViewHook();
         textViewHook.hook(lpparam);
+
+        FileBrowserHook fileBrowserHook = new FileBrowserHook();
+        fileBrowserHook.hook(lpparam);
     }
 
 }
