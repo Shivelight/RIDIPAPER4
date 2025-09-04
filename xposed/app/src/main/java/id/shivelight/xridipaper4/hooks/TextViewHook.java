@@ -1,7 +1,7 @@
 package id.shivelight.xridipaper4.hooks;
 
-import android.os.Environment;
-import android.util.Log;
+import static id.shivelight.xridipaper4.MainHook.DATA_DIR;
+
 import android.widget.TextView;
 
 import java.io.File;
@@ -25,36 +25,35 @@ public class TextViewHook extends XC_MethodHook {
     private final Map<String, String> stringMap = new HashMap<>();
 
     public TextViewHook() {
-        File layoutFile = new File(Environment.getExternalStorageDirectory().getPath() + "/XRIDIPAPER4/layout_string.psv");
+        File layoutFile = new File(DATA_DIR, "layout_string.psv");
         if (layoutFile.isFile()) {
-            Log.d(TAG, "Layout strings file found");
+            XposedBridge.log(TAG + ": Layout strings file found");
             try (Stream<String> stream = Files.lines(layoutFile.toPath())) {
                 stream.forEach(s -> {
                     List<String> columns = PsvParser.parse(s);
                     stringMap.put(columns.get(0), columns.get(1));
                 });
             } catch (IOException e) {
-                XposedBridge.log("Error reading layout strings file: " + e.getMessage());
+                XposedBridge.log(TAG + ": Error reading layout strings file: " + e.getMessage());
             }
         } else {
-            XposedBridge.log("Layout strings file not found in " + layoutFile.getPath());
+            XposedBridge.log(TAG + ": Layout strings file not found in " + layoutFile.getPath());
         }
 
-        File smaliFile = new File(Environment.getExternalStorageDirectory().getPath() + "/XRIDIPAPER4/smali_string.psv");
+        File smaliFile = new File(DATA_DIR, "smali_string.psv");
         if (smaliFile.isFile()) {
-            Log.d(TAG, "Smali strings file found");
+            XposedBridge.log(TAG + ": Smali strings file found");
             try (Stream<String> stream = Files.lines(smaliFile.toPath())) {
                 stream.forEach(s -> {
                     List<String> columns = PsvParser.parse(s);
                     stringMap.put(columns.get(0), columns.get(1));
                 });
             } catch (IOException e) {
-                XposedBridge.log("Error reading smali strings file: " + e.getMessage());
+                XposedBridge.log(TAG + ": Error reading smali strings file: " + e.getMessage());
             }
         } else {
-            XposedBridge.log("Smali strings file not found in " + smaliFile.getPath());
+            XposedBridge.log(TAG + ": Smali strings file not found in " + smaliFile.getPath());
         }
-
     }
 
     public String getTranslation(String stringArg) {
@@ -68,7 +67,7 @@ public class TextViewHook extends XC_MethodHook {
     }
 
     @Override
-    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+    protected void beforeHookedMethod(MethodHookParam param) {
         if (param.args[0] == null || stringMap.isEmpty()) return;
 
         Method method = (Method) param.method;
@@ -88,23 +87,19 @@ public class TextViewHook extends XC_MethodHook {
     }
 
     public void hook(XC_LoadPackage.LoadPackageParam lpparam) {
-        Log.d(TAG, "Hooking TextView.setText");
         XposedHelpers.findAndHookMethod(TextView.class, "setText", CharSequence.class, TextView.BufferType.class, this);
 
         // -----------------------
         // The result of methods bellow will be passed to TextView.setText
         // -----------------------
 
-        Log.d(TAG, "Hooking R.style.k4");
         // Spanned, before processed by Html. This allow matching strings with format tags like "변경한 <b>독서상태</b>는<br>여기서 필터링해서 볼 수 있어요!"
         XposedHelpers.findAndHookMethod("com.google.android.material.R.style", lpparam.classLoader, "k4", String.class, this);
 
-        Log.d(TAG, "Hooking i.s.b.o.l (Intrinsics)");
         // TODO: This is basically string concatenation method, maybe concat first before getting translation?
         //       or translate each part separately?
         XposedHelpers.findAndHookMethod("i.s.b.o", lpparam.classLoader, "l", String.class, Object.class, this);
 
-        Log.d(TAG, "Hooking com.ridi.books.viewer.main.fragment.LibraryDownloadedBooksFragment.J");
         XposedHelpers.findAndHookMethod("com.ridi.books.viewer.main.fragment.LibraryDownloadedBooksFragment",
                 lpparam.classLoader, "J", String.class, int.class, this);
     }

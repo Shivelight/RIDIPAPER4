@@ -17,7 +17,7 @@ public class FileBrowserHook {
         XposedHelpers.setStaticObjectField(runtimeObject, "b", new File(Environment.getExternalStorageDirectory(), "/"));
         XposedHelpers.findAndHookMethod("i.s.b.o", lpparam.classLoader, "l", String.class, Object.class, new XC_MethodHook() {
             @Override
-            protected void afterHookedMethod(XC_MethodHook.MethodHookParam param) throws Throwable {
+            protected void afterHookedMethod(XC_MethodHook.MethodHookParam param) {
                 if (param.args[1].equals("/Documents")) {
                     param.setResult(new File(Environment.getExternalStorageDirectory(), "/").toString());
                 }
