@@ -141,7 +141,7 @@ TTF, OTF 파일을 본문용 글꼴로 설정할 수 있습니다. PC와 연결 
 문단 간격|Paragraph Spacing
 새로운 잠금 비밀번호가 설정되었습니다.|A new lock password has been set.
 필터 및 정렬|Filter & Sort
-최근 생성순|Most Recently Created
+최근 생성순|Recently Created
 다음 권 자동으로 보기|Automatically view next volume
 타이머 종료|Timer End
 새 알림 %1$d개 초과|More than %1$d new notifications
@@ -272,7 +272,7 @@ RIDIPAPER 4 사용 팁|RIDIPAPER 4 Usage Tips
 최신 버전:|Latest version:
 책장 동기화 진행 중입니다.|Bookshelf sync in progress.
 저장|Save
-최근 본 작품 표지|Recently biewed book cover
+최근 본 작품 표지|Recently viewed book cover
 스탬프 생성|Create Stamp
 페이지를 넘겨도 확대된 본문의 위치가 고정됩니다.|The position of the zoomed-in body remains fixed even when turning pages.
 하이라이트|Highlight
