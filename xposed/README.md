@@ -15,3 +15,10 @@ See also [/data/layout_string.psv](/data/layout_string.psv) and [/data/smali_str
 ## FileBrowserHook
 
 Hook file browser to add ebooks from any directory instead of being restricted to  `/Documents` directory.
+
+## DictionaryHook
+
+**\* Require ColorDict to be installed**
+
+Add dictionary button on selection popup. Available on EPUB viewer.
+
