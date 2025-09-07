@@ -89,8 +89,8 @@ public class FileManagementHook {
         // --------------------
         // We can't simply hook every `Context.getFilesDir()` call since it will crash the app.
         // Even if it didn't, we should be concerned about potential side effects.
-        // So, we are only hooking it temporarily. Despite this, you'll still see some lock and json
-        // files related to firebase.
+        // So, we are only hooking it temporarily and exclusively for Realm database file operation.
+        // Despite this, you'll still see some lock and json files related to firebase.
 
         XC_MethodHook contextHook = new XC_MethodHook() {
             @Override
