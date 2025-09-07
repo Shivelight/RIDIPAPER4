@@ -12,7 +12,7 @@ import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import id.shivelight.xridipaper4.hooks.DictionaryHook;
-import id.shivelight.xridipaper4.hooks.FileBrowserHook;
+import id.shivelight.xridipaper4.hooks.FileManagementHook;
 import id.shivelight.xridipaper4.hooks.TextViewHook;
 
 public class MainHook implements IXposedHookLoadPackage {
@@ -37,8 +37,8 @@ public class MainHook implements IXposedHookLoadPackage {
         TextViewHook textViewHook = new TextViewHook();
         textViewHook.hook(lpparam);
 
-        XposedBridge.log(TAG + ": 🪝 Hooking FileBrowser...");
-        FileBrowserHook fileBrowserHook = new FileBrowserHook();
+        XposedBridge.log(TAG + ": 🪝 Hooking FileManagement...");
+        FileManagementHook fileBrowserHook = new FileManagementHook();
         fileBrowserHook.hook(lpparam);
 
         XposedBridge.log(TAG + ": 🪝 Hooking Dictionary...");

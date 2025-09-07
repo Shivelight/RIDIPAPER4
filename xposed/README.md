@@ -12,9 +12,12 @@ Hook TextView to provide UI translation.
 
 See also [/data/layout_string.psv](/data/layout_string.psv) and [/data/smali_string.psv](/data/smali_string.psv)
 
-## FileBrowserHook
+## FileManagementHook
 
-Hook file browser to add ebooks from any directory instead of being restricted to  `/Documents` directory.
+- Hooks the file browser to allow loading ebooks from any directory on the external storage. Instead of being restricted to `Documents` directory.
+- Store application files and metadata in external files directory (`Android/data/com.ridi.paper/files`) instead of internal files directory.
+
+See [FileManagementHook.java](app/src/main/java/id/shivelight/xridipaper4/hooks/FileManagementHook.java) for more comments.
 
 ## DictionaryHook
 
